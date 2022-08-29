@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Code Quiz</title>
+        <link rel="stylesheet" href="style.css" />
+      </head>
+</head> 
+<body>
+    <!-- timer -->
+    <div id="timer" class="timelocation" >Timer</div>
+    <!-- header -->
+    <header> 
+        <h1 id = "header">Quiz</h1> 
+    </header>
+    <!-- card area -->
+    <div class="card">
+    <!-- first page: before start the quiz -->
+        <div id = "page1">
+            <div class = "card-body">
+                Code Quiz
+            </div>
+            <!-- click the button to start the quiz. go to the second page -->
+            <div class = "card-footer">
+                <input id = "btn1" class = "btn" type="button" value="start" onclick="nextPage(1)">
+            </div>
+        </div>
+        <!-- second page: show the first true and false problem -->
+        <div id = "page2" style="display:none">
+            <div class = "card-body">
+                The boolean is a data type that allows only two possible values (i.e. True and False)
+            </div>
+            <div class = "card-footer">
+                <!-- True is the correct answer. go to the third page -->
+                <input id = "page2btn1" class = "btn" type="button" value="True" onclick="nextPage(2)">
+                <!-- If choose false, subtract 30sec from the clock -->
+                <input id = "page2btn2" class = "btn" type="button" value="False" onclick="wrongAns(2)">
+            </div>
+        </div>
+        <!-- third page: show the second true and false problem -->
+        <div id = "page3" style="display:none">
+            <div class = "card-body">
+                The setInterval function continuously and repeatedly run a code at every time event with a fixed time delay which is defined by user 
+            </div>
+            <div class = "card-footer">
+                <!-- True is the correct answer. go to the fourth page -->
+                <input id = "page3btn1" class = "btn" type="button" value="True" onclick="nextPage(3)">
+                <!-- If choose false, subtract 30sec from the clock -->
+                <input id = "page3btn2" class = "btn" type="button" value="False" onclick="wrongAns(3)">
+            </div>
+        </div>
+        <!-- fourth page. put initial and submit it -->
+        <div id = "page4" style="display:none">
+            <div class = "card-body">
+                All Done!<br>
+            </div>
+            <div class = "card-footer">
+                Initial:
+                <!-- out initial in this text box -->
+                <input id = 'name' type="text" class = "input-text" >
+                <!-- go to page 5 to see the saved score -->
+                <input id = "page4btn1" class = "btn" type="button" value="submit" onclick="nextPage(4)">
+            </div>
+        </div>
+        <!-- fifth page. initial and score of the candidates are saved. Score board are shown in this page. -->
+        <div id = "page5" style="display:none">
+            <div class = "card-body" >
+                <!-- use table to present the initial and score results -->
+                <table border ="1" class = "table">
+                    <caption>Score board</caption>
+                    <tr>
+                        <th>initial</th>
+                        <th>score</th>
+                    </tr>
+                    <!-- show initial and score of the top scorer -->
+                    <tr>
+                        <td><p id="1st-initial"></p></td>
+                        <td><p id="1st-score"></p></td>
+                    </tr>
+                    <!-- show initial and score of the second top scorer -->
+                    <tr>
+                        <td><p id="2nd-initial"></p></td>
+                        <td><p id="2nd-score"></p></td>
+                    </tr>
+                </table>
+                <p id="result"></p>
+            </div>
+            <!-- go back to page 1 to restrat the quiz -->
+            <div class = "card-footer">
+                <input id = "page5btn1" class="btn" type="button" value="restart" onclick="nextPage(5)">
+            </div>
+        </div>
+    <div>
+    
+    <script src="script.js">
+    </script>
+    </body>
+</html>
